@@ -13,6 +13,7 @@ function validation()
 		alert("You have made a successful submission of the form.");
 	} else {
 		alert(message);
+		return false;
 	}
 }
 
@@ -28,7 +29,7 @@ function checkEmails()
 	}
 	if(email != emailCon)
 	{
-		result.concat("Email: The emails do not match!\n")
+		result = result.concat("Email Confirmation: The emails do not match!\n");
 	}
 	return result;
 }
@@ -37,11 +38,17 @@ function passStrength()
 {
 	var reg = /((?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&'*-+])[^ ]{6,14}$)/;
 	var pass = document.getElementById('usrPass').value;
+	var passCon = document.getElementById('usrPassCon').value;
+	var result = "";
 	if(!pass.match(reg))
 	{
-		return "Password: Your password must have at least 6 characters with one uppercase letter, one lowercase letter, a number, and a special character\n";
+		result = "Password: Your password must have at least 6 characters with one uppercase letter, one lowercase letter, a number, and a special character\n";
 	}
-	return "";
+	if(pass != passCon)
+	{
+		result = result.concat("Password Confirmation: Your passwords must match.\n");
+	}
+	return result;
 }
 
 function usrName()

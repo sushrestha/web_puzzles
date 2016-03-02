@@ -1,3 +1,6 @@
+// Four buttons max, counter array
+var btnCounter = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+
 var emailAlert = null;
 var emailAlerted = false;
 
@@ -14,7 +17,7 @@ function validateEmail()
 	if(email1 != email2.value)
 	{
 		noMatch(email2);
-	} else 
+	} else
 	{
 		yMatch(email2);
 	}
@@ -102,43 +105,103 @@ function addButton(field)
 {
 
 	var id = document.getElementById(field).id;
-	var parent = document.getElementById(field);
-	var remove = document.createElement('BUTTON');
-	remove.dataToggle="tooltip";
-	remove.title="This box isn't needed so remove it";
-	remove.type = "button";
-	remove.className = "col-sm-3";
-	remove.onclick = function(){
-		removeButton(this);
+	if(checkButtons(id)){
+		var parent = document.getElementById(field);
+		var remove = document.createElement('BUTTON');
+		remove.dataToggle="tooltip";
+		remove.title="This box isn't needed so remove it";
+		remove.type = "button";
+		remove.className = "col-sm-2";
+		remove.onclick = function(){
+			removeButton(this);
+		}
+		var textField = document.createElement("SMALL");
+		textField.style.fontSize = "xx-small";
+		var removeText = document.createTextNode("Remove Box");
+		textField.appendChild(removeText);
+		remove.appendChild(textField);
+		var element = document.createElement('SELECT');
+		var option0 = document.createElement('OPTION');
+		option0.text = "None";
+		element.add(option0);
+		var option1 = document.createElement('OPTION');
+		option1.text = "It does not have a maximum length";
+		element.add(option1);
+		var option2 = document.createElement('OPTION');
+		option2.text = "It does not validate the information given";
+		element.add(option2);
+		var option3 = document.createElement('OPTION');
+		option3.text = "It does not check the formatting of the information";
+		element.add(option3);
+		element.id = field;
+		element.className = "col-sm-8"
+		element.style = "text-align:center;";
+		parent.parentNode.insertBefore(remove, parent.nextSibling);
+		parent.parentNode.insertBefore(element, parent.nextSibling.nextSibling);
+	} else
+	{
+		alert("You already have the maximum number of that kind of button");
 	}
-	var textField = document.createElement("SMALL");
-	textField.style.fontSize = "xx-small";
-	var removeText = document.createTextNode("Remove Box");
-	textField.appendChild(removeText);
-	remove.appendChild(textField);
-	var element = document.createElement('SELECT');
-	var option0 = document.createElement('OPTION');
-	option0.text = "None";
-	element.add(option0);
-	var option1 = document.createElement('OPTION');
-	option1.text = "It does not have a maximum length";
-	element.add(option1);
-	var option2 = document.createElement('OPTION');
-	option2.text = "It does not validate the information given";
-	element.add(option2);
-	var option3 = document.createElement('OPTION');
-	option3.text = "It does not check the formatting of the information";
-	element.add(option3);
-	element.id = field;
-	element.className = "col-sm-9"
-	element.style = "text-align:center;";
-	parent.parentNode.insertBefore(remove, parent.nextSibling);
-	parent.parentNode.insertBefore(element, parent.nextSibling.nextSibling);
 }
 
 
 function removeButton(field)
 {
+	var testing = field.nextSibling;
+	var position = getCounter(testing.id);
+	btnCounter[position] -= 1;
 	field.parentNode.removeChild(field.nextSibling);
 	field.parentNode.removeChild(field);
+}
+
+function checkButtons(id)
+{
+	var result = true;
+	var postion = getCounter(id);
+	if(btnCounter[postion] < 3)
+	{
+		btnCounter[postion] += 1;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function getCounter(id)
+{
+	switch(id)
+	{
+		case "field0":
+			return 0;
+		break;
+		case "field1":
+			return 1;
+		break;
+		case "field2":
+			return 2;
+		break;
+		case "field3":
+			return 3;
+		break;
+		case "field4":
+			return 4;
+		break;
+		case "field5":
+			return 5;
+		break;
+		case "field6":
+			return 6;
+		break;
+		case "field7":
+			return 7;
+		break;
+		case "field8":
+			return 8;
+		break;
+		case "field9":
+			return 9;
+		break;
+	}
 }
