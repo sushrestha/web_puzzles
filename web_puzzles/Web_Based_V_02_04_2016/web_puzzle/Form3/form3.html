@@ -49,6 +49,11 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
       	padding-top: 10px;
       	padding-bottom: 10px;
       }
+      button.pad
+      {
+      	padding-top: 10px;
+      	padding-bottom: 10px;
+      }
     </style>
 
   </head>
@@ -74,45 +79,49 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
     <body  id="grad1">
       <div class="container">
         <div class="form-group">
-          <form id="Submission" onsubmit="studentSub(); return validation();">
-	          <div class="col-sm-12 bordered" style="background-color:#f7f7f7;">
-	            <div style="text-align:center;" class="row"><h2>Please fill out all fields</h2></div>
-	      	    <div class="row padded">
-	              <label class="col-sm-2" for "usrAlias">Username: </label>
-	              <input type="text" maxlength="20" class="col-sm-3" id="usrAlias" placeholder="Field 1">
-	      	    </div>
-	      	    <div class="row padded">
-	      	      <label class="control-label col-sm-2" for "usrEmail">Email: </label>
-	      	      <input type="email" maxlength="20" class="col-sm-3" id="usrEmail" placeholder="Field 2">
-	      	      <label class="control-label col-sm-3" for "usrEmailCon">Confirm Email: </label>
-	      	      <input type="email" class="col-sm-3" id="usrEmailCon" placeholder="Field 3" onkeyup="validateEmail()">
-	      	      <p id="testing"></p>
-	      	    </div>
-	      	    <div class="row padded">
-	      	      <label class="control-label col-sm-2">Password:</label>
-	      		  <input type="password" maxlength="14"class="col-sm-3" id="usrPass" placeholder="Field 4">
-	      		  <label class="control-label col-sm-3"> Confirm Password:</label>
-	      		  <input type="password" maxlength="14"class="col-sm-3" id="usrPassCon" placeholder="Field 5"onkeyup="validatePass()">
-	      	    </div>
-	      	    <div class="row padded">
-	      	      <label class="control-label col-sm-2">Full Name: </label>
-	      		  <input type="text" class="col-sm-3" maxlength="20"id="usrFName" placeholder="Field 6 (First)">
-	      		  <input type="text" class="col-sm-3" maxlength="20"id="usrLName" placeholder="Field 7 (Last)">
-	      		  <input type="text" class="col-sm-2" maxlength="1"id="usrInitial" placeholder="Field 8 MI">
-	      	    </div>
-	      	    <div class="row padded">
-	      	      <label class="col-sm-2">Phone number: </label>
-	      		  <input type="tel" maxlength="14"class="col-sm-3" id="usrPNumber" placeholder="Field 9 (xxx) xxx-xxxx">
-	      		  <label class="col-sm-2">Birth Date: </label>
-	      		  <input type="text" class="col-sm-3" id="usrBDay" maxlength="10" placeholder="mm/dd/yyyy Field 10"></input>
-	      	    </div>
-	      	    <div class="col-sm-3"></div>
-	            <button class="btn btn-success col-sm-2" type="submit">Create Account</button>
-	            <span class="col-sm-2"></span>
-	            <button class="btn btn-info col-sm-2" type="reset">Clear fields</button>
-	            <div class="col-sm-3"></div>
-	          </div>
-          </form>
+	          <form id="Submission" onsubmit="studentSub(); return validation();">
+		          <div class="col-sm-12 bordered" style="background-color:#f7f7f7; box-shadow: inset 0 0 0 4px red;">
+		            <div style="text-align:center;" class="row"><h2>Form Completion Exercise</h2></div>
+		      	    <div class="row padded">
+		              <label class="col-sm-2" for "usrAlias">Username: </label>
+		              <input type="text" maxlength="20" class="col-sm-3" id="usrAlias" placeholder="jdoe123">
+		      	    </div>
+		      	    <div class="row padded">
+		      	      <label class="control-label col-sm-2" for "usrEmail">Email: </label>
+		      	      <input type="email" maxlength="20" class="col-sm-3" id="usrEmail" placeholder="jdoe@example.com">
+		      	      <label class="control-label col-sm-3" for "usrEmailCon">Confirm Email: </label>
+		      	      <input type="email" class="col-sm-3" id="usrEmailCon" placeholder="jdoe@example.com" onkeyup="validateEmail()">
+		      	      <p id="testing"></p>
+		      	    </div>
+		      	    <div class="row padded">
+		      	      <label class="control-label col-sm-2">Password:</label>
+		      		  <input type="password" maxlength="14"class="col-sm-3" id="usrPass" placeholder="*********">
+		      		  <label class="control-label col-sm-3"> Confirm Password:</label>
+		      		  <input type="password" maxlength="14"class="col-sm-3" id="usrPassCon" placeholder="*********"onkeyup="validatePass()">
+		      	    </div>
+		      	    <div class="row padded">
+		      	      <label class="control-label col-sm-2">Full Name: </label>
+		      		  <input type="text" class="col-sm-3" maxlength="20"id="John" placeholder="Field 6 (First)">
+		      		  <input type="text" class="col-sm-3" maxlength="20"id="Doe" placeholder="Field 7 (Last)">
+		      		  <input type="text" class="col-sm-2" maxlength="1"id="J" placeholder="Field 8 MI">
+		      	    </div>
+		      	    <div class="row padded">
+		      	      <label class="col-sm-2">Phone number: </label>
+		      		  <input type="tel" maxlength="14"class="col-sm-3" id="usrPNumber" placeholder="(xxx) xxx-xxxx">
+		      		  <label class="col-sm-2">Birth Date: </label>
+		      		  <input type="text" class="col-sm-3" id="usrBDay" maxlength="10" placeholder="mm/dd/yyyy">
+		      	    </div>
+		      	    <div class="row">
+			      	    <div class="col-sm-3"></div>
+			            <button class="btn btn-success col-sm-2 pad" type="submit">Create Account</button>
+			            <span class="col-sm-2"></span>
+			            <button class="btn btn-info col-sm-2 pad" type="reset">Clear fields</button>
+			            <div class="col-sm-3"></div>
+			        </div>
+		            <div class="row padded"></div>
+		          </div>
+          	  </form>
+          <div class="row padded"></div>
           <!-- Careful about messing too much in here it could ruin your grade if you alter anything....so
           DO NOT TOUCH BELOW HERE!-->
           <form id="GradeMe" onsubmit="return answers();">
@@ -130,6 +139,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field0')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -144,6 +154,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field1')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -157,8 +168,9 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not validate the information given</option>
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
+	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field2')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
-	            	<button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field2', this)"><small style="font-size: xx-small;">Add a box</small></button>
 	            </div>
 	            <div class="row padded">
 	              <div class="col-sm-2">
@@ -172,6 +184,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field3')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -186,6 +199,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field4')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -200,6 +214,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field5')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -214,6 +229,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field6')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -228,6 +244,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field7')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -242,6 +259,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field8')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div> 
 	            <div class="row padded">
@@ -256,6 +274,7 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 	                  <option>It does not check the formatting of the information</option>
 	                </select>
 	                <button data-toggle="tooltip" title="There is another answer so another box is needed." type="button" class="col-sm-2" onclick="addButton('field9')"><small style="font-size: xx-small;">Add a box</small></button>
+	                <span id="placeHolder"></span>
 	              </div>
 	            </div>
 	          <div class="col-sm-8"></div>
@@ -271,6 +290,5 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
           <p>&copy; 2016, Center for Information Assurance (CfIA), University of Memphis.</p>
         </footer> 
       </div>
-    </div> 
   </body>
 </html>

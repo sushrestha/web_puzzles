@@ -106,6 +106,7 @@ function addButton(field)
 
 	var id = document.getElementById(field).id;
 	if(checkButtons(id)){
+		var position = getCounter(field);
 		var parent = document.getElementById(field);
 		var remove = document.createElement('BUTTON');
 		remove.dataToggle="tooltip";
@@ -136,8 +137,10 @@ function addButton(field)
 		element.id = field;
 		element.className = "col-sm-8"
 		element.style = "text-align:center;";
-		parent.parentNode.insertBefore(remove, parent.nextSibling);
-		parent.parentNode.insertBefore(element, parent.nextSibling.nextSibling);
+		var check1 = parent.nextSibling.nextSibling;
+		var check2 = parent.nextElementSibling.nextElementSibling;
+		parent.parentNode.insertBefore(element, check2);
+		parent.parentNode.insertBefore(remove, check2);
 	} else
 	{
 		alert("You already have the maximum number of that kind of button");
@@ -147,10 +150,10 @@ function addButton(field)
 
 function removeButton(field)
 {
-	var testing = field.nextSibling;
+	var testing = field.previousSibling;
 	var position = getCounter(testing.id);
 	btnCounter[position] -= 1;
-	field.parentNode.removeChild(field.nextSibling);
+	field.parentNode.removeChild(field.previousSibling);
 	field.parentNode.removeChild(field);
 }
 
@@ -158,6 +161,7 @@ function checkButtons(id)
 {
 	var result = true;
 	var postion = getCounter(id);
+	var testing = btnCounter[2];
 	if(btnCounter[postion] < 3)
 	{
 		btnCounter[postion] += 1;
