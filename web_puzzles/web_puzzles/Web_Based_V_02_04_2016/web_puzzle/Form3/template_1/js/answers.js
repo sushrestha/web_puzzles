@@ -78,6 +78,8 @@ function check(field)
 	var result = 0;
 	// Length of the student's answer array
 	var count = field.length;
+
+	var divider = answers.length
 	// Loops through all of the student's answers unless it returns early
 	for(i = 0; i < field.length; i++)
 	{
@@ -97,7 +99,7 @@ function check(field)
 		{
 			if(field[i].value == answers[j])
 			{
-				result += (1/(answers.length));
+				result += (1/divider);
 				answers.splice(j, 1);
 				// Reduces the count of answers that was given by the student
 				count -= 1;

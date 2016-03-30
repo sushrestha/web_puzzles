@@ -23,6 +23,10 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
 
 
     <style>
+
+html{
+  min-height: 100%;
+}
     #grad1{
     background: #6666ff; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#6666ff, #006600); /* For Safari 5.1 to 6.0 */
@@ -126,15 +130,17 @@ m=""; for (i=0; i<s.length; i++) {	if(s.charCodeAt(i) == 28){	  m+= '&';} else i
           <div class="row padded"></div>
           <!-- Careful about messing too much in here it could ruin your grade if you alter anything....so
           DO NOT TOUCH BELOW HERE!-->
-          <div class="col-sm-12 bordered" style="background-color:#f7f7f7;;"><h2 style="text-align:center"><button data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx" style="border: none;">Now that you've seen the form what vulnerabilities does it have?</button></h2></div>
+          <div class="col-sm-4"></div>
+          <button class="btn btn-info col-sm-3" data-toggle="collapse" data-target="#collapseEx" aria-expanded="false" aria-controls="collapseEx">Collapse/UnCollapse Submission Sheet</button>
           <div class="collapse col-sm-12" id="collapseEx">
-	          <form id="GradeMe" onsubmit="return answers();">
-		          <div class="col-sm-12 bordered" style="background-color:#f7f7f7;"> 
-		            <div class="row padded">
-		              <div class="col-sm-2">
-		                <label>Username:</label>
-		              </div>
-		              <div>
+            <form id="GradeMe" onsubmit="return answers();">
+              <div class="col-sm-12 bordered" style="background-color:#f7f7f7;"> 
+                <div class="row padded" style="background-color:#f7f7f7;;"><h2 style="text-align:center">Now that you've seen the form what vulnerabilities does it have?</h2></div>
+                <div class="row padded">
+                  <div class="col-sm-2">
+                    <label>Username:</label>
+                  </div>
+                  <div>
 		                 <select id="field0" class="col-sm-6" style="text-align:center;">
 		                  <option selected="">None</option>
 		                  <option>It does not have a maximum length</option>
