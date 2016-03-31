@@ -58,10 +58,9 @@ function bDay()
 	var current = new Date();
 	var reg = /^[0-1]?[0-9]{1}\/[0-3]?[0-9]{1}\/[1-2]{1}[0-9]{3}$/;
 	var date = document.getElementById("usrBDay").value;
-	var length = date.length;
-	var year = parseInt(date.substring(length-3,length));
-	var mon = parseInt(date.substring(3, 4));
-	var day = parseInt(date.substring(0, 1));
+	var year = date.substring(6,10);
+	var day = date.substring(3, 5);
+	var mon = date.substring(0, 2);
 	if(!date.match(reg))
 	{
 		return "Birth Date: Your birthday is not formatted correctly\n";
