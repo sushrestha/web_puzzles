@@ -25,7 +25,7 @@ function checkEmails()
 	var emailCon = document.getElementById('usrEmailCon').value;
 	if(!email.match(reg))
 	{
-		result = result.concat"Email: This email is not valid!\n";
+		result = result.concat("Email: This email is not valid!\n");
 	}
 	if(email != emailCon)
 	{
@@ -42,7 +42,7 @@ function passStrength()
 	var result = "";
 	if(!pass.match(reg))
 	{
-		result = result.concat"Password: Your password must have at least 6 characters with one uppercase letter, one lowercase letter, a number, and a special character\n";
+		result = result.concat("Password: Your password must have at least 6 characters with one uppercase letter, one lowercase letter, a number, and a special character\n");
 	}
 	return result;
 }

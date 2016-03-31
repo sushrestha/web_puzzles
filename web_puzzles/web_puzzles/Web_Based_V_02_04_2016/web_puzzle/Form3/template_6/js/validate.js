@@ -23,7 +23,7 @@ function checkEmails()
 	var emailCon = document.getElementById('usrEmailCon').value;
 	if(!email.match(reg))
 	{
-		result = result.concat"Email: This email is not valid!\n";
+		result = result.concat("Email: This email is not valid!\n");
 	}
 	if(email != emailCon)
 	{
