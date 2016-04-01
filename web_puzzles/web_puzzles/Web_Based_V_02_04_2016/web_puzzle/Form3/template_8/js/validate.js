@@ -9,6 +9,7 @@ function validation()
 
 	if(message == ""){
 		alert("You have made a successful submission of the form.");
+		return false;
 	} else {
 		alert(message);
 		return false;
@@ -57,11 +58,19 @@ function names()
 	var first = document.getElementById('usrFName').value;
 	var last = document.getElementById('usrLName').value;
 	var mid = document.getElementById('usrInitial').value;
-	if(!first.match(reg))
+	if(first = "")
+	{
+		result = result.concat("First Name: You didn't put anything for your first name\n");
+	}
+	else if(!first.match(reg))
 	{
 		result = result.concat("First Name: Your first name isn't formatted correctly, if your name uses punctuation please don't enter it and try again\n");
 	}
-	if(!mid.match(regm))
+	if(mid == "")
+	{
+		result = result.concat("Middle Initial: You didn't put anything for your middle initial\n");
+	}
+	else if(!mid.match(regm))
 	{
 		result = result.concat("Middle Initial: Your middle initial isn't formatted correctly\n");
 	}
