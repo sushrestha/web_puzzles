@@ -36,7 +36,7 @@ function checkEmails()
 
 function passStrength()
 {
-	var reg = /((?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&'*-+])[^ ]{6,14}$)/;
+	var reg = /((?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&'*-+])[^ ])/;
 	var pass = document.getElementById('usrPass').value;
 	var passCon = document.getElementById('usrPassCon').value;
 	var result = "";

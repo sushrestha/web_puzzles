@@ -20,7 +20,7 @@ function validation()
 
 function passStrength()
 {
-	var reg = /((?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&'*-+])[^ ]{6,14}$)/;
+	var reg = /((?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&'*-+])[^ ])/;
 	var pass = document.getElementById('usrPass').value;
 	var passCon = document.getElementById('usrPassCon').value;
 	var result = "";
@@ -37,7 +37,7 @@ function passStrength()
 
 function usrName()
 {
-	var reg = /^(?=.{6,20}$)(?![_\\/.<>])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.\\/<>])$/;
+	var reg = /^(?![_\\/.<>])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.\\/<>])$/;
 	var name = document.getElementById('usrAlias').value;
 	if(!name.match(reg)){
 		return "Username: UserName must be at least 6 characters with no \\, /, <, > symbols\n";
@@ -76,7 +76,7 @@ function phnNum()
 {
 	var result = "";
 	var number = document.getElementById('usrPNumber').value;
-	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
+	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]+/;
 	if(number = "")
 	{
 		return "Phone Number: You didn't input your phone number\n"

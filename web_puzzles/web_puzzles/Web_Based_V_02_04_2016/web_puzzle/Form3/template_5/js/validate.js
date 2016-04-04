@@ -34,7 +34,7 @@ function names()
 {
 	var result = "";
 	var reg = /^([A-Z]{1,2})[a-z]+([A-Z]?)[a-z]+$/;
-	var regm = /^[A-Z]{1}$/;
+	var regm = /^[A-Z]+/;
 	var first = document.getElementById('usrFName').value;
 	var last = document.getElementById('usrLName').value;
 	var mid = document.getElementById('usrInitial').value;
@@ -62,7 +62,7 @@ function phnNum()
 {
 	var result = "";
 	var number = document.getElementById('usrPNumber').value;
-	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
+	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]+/;
 	if(number == "")
 	{
 		return "Phone Number: You didn't put anything for your phone number\n";

@@ -36,7 +36,7 @@ function passStrength()
 
 function usrName()
 {
-	var reg = /^(?=.{6,20}$)(?![_\\/.<>])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.\\/<>])$/;
+	var reg = /^(?![_\\/.<>])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.\\/<>])$/;
 	var name = document.getElementById('usrAlias').value;
 	else if(!name.match(reg)){
 		return "Username: User Name must be at least 6 characters with no \\, /, <, > symbols\n";
@@ -48,7 +48,7 @@ function names()
 {
 	var result = "";
 	var reg = /^([A-Z]{1,2})[a-z]+([A-Z]?)[a-z]+$/;
-	var regm = /^[A-Z]{1}$/;
+	var regm = /^[A-Z]+/;
 	var first = document.getElementById('usrFName').value;
 	var last = document.getElementById('usrLName').value;
 	var mid = document.getElementById('usrInitial').value;

@@ -19,7 +19,7 @@ function validation()
 
 function usrName()
 {
-	var reg = /^(?=.{6,20}$)(?![_\\/.<>])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.\\/<>])$/;
+	var reg = /^(?![_\\/.<>])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.\\/<>])$/;
 	var name = document.getElementById('usrAlias').value;
 	if(!name.match(reg)){
 		return "Username: UserName must be at least 6 characters with no \\, /, <, > symbols\n";
@@ -58,7 +58,7 @@ function phnNum()
 {
 	var result = "";
 	var number = document.getElementById('usrPNumber').value;
-	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
+	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]+/;
 	if(number == "")
 	{
 		return "Phone Number: You didn't put anything for your phone number\n";

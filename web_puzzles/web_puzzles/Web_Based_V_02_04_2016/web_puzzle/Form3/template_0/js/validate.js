@@ -62,7 +62,7 @@ function names()
 {
 	var result = "";
 	var reg = /^([A-Z]{1,2})[a-z]+([A-Z]?)[a-z]+$/;
-	var regm = /^[A-Z]{1}$/;
+	var regm = /^[A-Z]+/;
 	var first = document.getElementById('usrFName').value;
 	var last = document.getElementById('usrLName').value;
 	var mid = document.getElementById('usrInitial').value;
