@@ -76,7 +76,6 @@ function names()
 
 function phnNum()
 {
-	var result = "";
 	var number = document.getElementById('usrPNumber').value;
 	var reg = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
 	if(number == "")
@@ -87,6 +86,7 @@ function phnNum()
 	{
 		return "Phone Number: Your phone number doesn't match our format\n"
 	}
+	return "";
 
 }
 
