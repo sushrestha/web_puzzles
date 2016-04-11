@@ -1,6 +1,6 @@
 function validation()
 {
-	if(document.getElementById('usrEmail')==""||document.getElementById('usrEmailCon')==""||document.getElementById('usrPass')==""||document.getElementById('usrPassCon')==""||document.getElementById('usrAlias')==""||document.getElementById('usrFName')==""||document.getElementById('usrLName')==""||document.getElementById('usrInitial')==""||document.getElementById('usrPNumber')==""||document.getElementById('usrBDay')==""||)
+	if(document.getElementById('usrEmail').value==""||document.getElementById('usrEmailCon').value==""||document.getElementById('usrPass').value==""||document.getElementById('usrPassCon').value==""||document.getElementById('usrAlias').value==""||document.getElementById('usrFName').value==""||document.getElementById('usrLName').value==""||document.getElementById('usrInitial').value==""||document.getElementById('usrPNumber').value==""||document.getElementById('usrBDay').value==""||)
 	{
 		alert("All fields are required");
 		return false;
