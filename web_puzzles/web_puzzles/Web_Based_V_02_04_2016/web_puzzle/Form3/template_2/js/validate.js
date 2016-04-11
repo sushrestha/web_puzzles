@@ -1,5 +1,10 @@
 function validation()
 {
+	if(document.getElementById('usrEmail')==""||document.getElementById('usrEmailCon')==""||document.getElementById('usrPass')==""||document.getElementById('usrPassCon')==""||document.getElementById('usrAlias')==""||document.getElementById('usrFName')==""||document.getElementById('usrLName')==""||document.getElementById('usrInitial')==""||document.getElementById('usrPNumber')==""||document.getElementById('usrBDay')==""||)
+	{
+		alert("All fields are required");
+		return false;
+	}
 	var message = "";
 	var adding;
 
